@@ -7,7 +7,9 @@
     <UserSecretsId>dotnet-MonitorService-29d36077-18df-4858-b28e-40d51012a5e1</UserSecretsId>
   </PropertyGroup>
 
-  <ItemGroup>
+	  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="9.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client.Core" Version="9.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Core" Version="1.1.0" />

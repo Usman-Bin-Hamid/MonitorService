@@ -5,6 +5,10 @@ VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitorService", "MonitorService.csproj", "{52784AE9-4DF2-4075-9B28-2EE6C1DC9184}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceMonitoringAPI", "..\ServiceMonitoringAPI\ServiceMonitoringAPI.csproj", "{BAB3AF2D-ADBD-482A-97ED-4AC1047BD5B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedModels", "..\SharedModels\SharedModels.csproj", "{E3FDA6FC-44A2-4274-8881-E70078627952}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{52784AE9-4DF2-4075-9B28-2EE6C1DC9184}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52784AE9-4DF2-4075-9B28-2EE6C1DC9184}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52784AE9-4DF2-4075-9B28-2EE6C1DC9184}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAB3AF2D-ADBD-482A-97ED-4AC1047BD5B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAB3AF2D-ADBD-482A-97ED-4AC1047BD5B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAB3AF2D-ADBD-482A-97ED-4AC1047BD5B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAB3AF2D-ADBD-482A-97ED-4AC1047BD5B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3FDA6FC-44A2-4274-8881-E70078627952}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3FDA6FC-44A2-4274-8881-E70078627952}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3FDA6FC-44A2-4274-8881-E70078627952}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3FDA6FC-44A2-4274-8881-E70078627952}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

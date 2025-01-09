@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 using System.Timers;
 using Microsoft.AspNetCore.SignalR.Client;
 using Newtonsoft.Json;
+using SharedModels;
 using Timer = System.Timers.Timer;
 
 namespace ServiceMonitor
@@ -248,15 +249,5 @@ namespace ServiceMonitor
         }
     }
 
-    public class Config
-    {
-        public string SignalRUrl { get; set; }
-    }
-
-    public class ServiceStatus
-    {
-        public string StandardizedStatus { get; set; }
-        public string OriginalStatus { get; set; }
-        public string DisplayName { get; set; }
-    }
+   
 }

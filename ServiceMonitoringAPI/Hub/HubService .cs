@@ -12,9 +12,10 @@ namespace ServiceMonitoringAPI.Hub
             _hubContext = hubContext;
         }
 
-        public async Task SendManagementCommand(string machineUniqueId, string action, string serviceName)
+        public async Task SendManagementCommand(string machineUniqueId, string machine, string task)
         {
-            await _hubContext.Clients.Group(machineUniqueId).SendAsync("ManageService", action, serviceName);
+        
+                await _hubContext.Clients.All.SendAsync("ReceiveMessage", machine, task);
         }
     }
 }

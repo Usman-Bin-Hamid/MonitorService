@@ -34,7 +34,7 @@ namespace ServiceMonitor
             _hubConnection.StartAsync().GetAwaiter().GetResult();
 
             // Register for commands from SignalR
-            _hubConnection.On<string, string>("ManageService", ManageService);
+            _hubConnection.On<string, string>("ReceiveMessage", ManageService);
 
             // Setup timer to monitor services every 10 seconds
             _timer = new Timer(10000);
@@ -54,7 +54,7 @@ namespace ServiceMonitor
 
         private static void OnTimedEvent(Object source, ElapsedEventArgs e)
         {
-            SendServiceStatus();
+            //SendServiceStatus();
         }
 
         private static void SendServiceStatus()
@@ -69,7 +69,7 @@ namespace ServiceMonitor
             try
             {
                 var serviceStatusJson = JsonConvert.SerializeObject(currentServiceStatus);
-                _hubConnection.InvokeAsync("ReceiveServiceStatus", serviceStatusJson).GetAwaiter().GetResult();
+                _hubConnection.InvokeAsync("SendServiceStatus","static", serviceStatusJson).GetAwaiter().GetResult();
                 _previousServiceStatus = currentServiceStatus;
             }
             catch (Exception ex)
@@ -153,15 +153,15 @@ namespace ServiceMonitor
         //    return new Dictionary<string, ServiceStatus>();
         //}
 
-        private static void ManageService(string action, string serviceName)
+        private static void ManageService(string machine, string task)
         {
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
-                ManageWindowsService(action, serviceName);
+                ManageWindowsService(task, machine);
             }
             else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
             {
-                ManageLinuxService(action, serviceName);
+                ManageLinuxService(task, machine);
             }
             else
             {

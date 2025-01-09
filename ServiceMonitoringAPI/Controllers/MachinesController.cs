@@ -21,7 +21,7 @@ namespace ServiceMonitoringAPI.Controllers
         }
 
 
-        [HttpGet]
+        [HttpGet("GetAllManageService")]
         public async Task<ActionResult<IEnumerable<Machine>>> GetMachines()
         {
             return await _context.Machines.ToListAsync();
@@ -41,13 +41,13 @@ namespace ServiceMonitoringAPI.Controllers
         }
 
         // POST: api/Machines
-        //[HttpPost]
-        //public async Task<ActionResult<Machine>> PostMachine(Machine machine)
-        //{
-        //    _context.Machines.Add(machine);
-        //    await _context.SaveChangesAsync();
-        //    return CreatedAtAction(nameof(GetMachines), new { id = machine.MachineId }, machine);
-        //}
+        [HttpGet("GetManageService")]
+        public async Task<IActionResult> PostMachine(string machine, string task)
+        {
+            await _hubContext.SendManagementCommand("static", machine, task);
+            return Ok();
+           
+        }
     }
     
 

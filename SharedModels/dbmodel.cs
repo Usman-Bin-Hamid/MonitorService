@@ -20,7 +20,7 @@ namespace SharedModels
         public int MachineId { get; set; }
         public string ServiceName { get; set; }
         public string Status { get; set; }
-        public DateTime LastChecked { get; set; }
+        public string LastChecked { get; set; }
         public Machine Machine { get; set; }
     }
 }
